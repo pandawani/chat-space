@@ -17,7 +17,7 @@
 ## groupsテーブル
 |Column|type|Options|
 |------|----|-------|
-|group-name|string|null: false|
+|name|string|null: false|
 
 ### Association
 -has_many: groups_users
