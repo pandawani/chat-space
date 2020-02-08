@@ -13,7 +13,7 @@ $whitecolor: #ffffff;
   color: $whitecolor;
   font-weight: bold;
 
-  .side_bar__user-name{
+  &__user-name{
     height: 100px;
     display: flex;
     align-items: center;
@@ -24,11 +24,11 @@ $whitecolor: #ffffff;
       @include w2h(260, 20);
       display: flex;
       line-height: 20px;
-      .top-items__name{
+      &__name{
         width: 200px;
         font-size: 16px;
       }
-      .top-items__icons{
+      &__icons{
         width: 60px;
         text-align: right;
         &__edit{
@@ -43,7 +43,7 @@ $whitecolor: #ffffff;
     }
   }
 
-  .side_bar__group-list{
+  &__group-list{
     height: calc(100% - 100px);
     background-color: #2f3e51;
     .group-list__items{

@@ -18,7 +18,7 @@ $whitecolor: #ffffff;
   @include w2h(calc(100vw - 300px), 100vh);
   background-color:$whitecolor;
 
-  .chat_main__group-info{
+  &__group-info{
     border-bottom: #eeeeee solid 1px;
     height: 100px;
     display: flex;
@@ -56,7 +56,7 @@ $whitecolor: #ffffff;
     
   }
 
-  .chat_main__message-list{
+  &__message-list{
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     .post-info{
@@ -64,7 +64,7 @@ $whitecolor: #ffffff;
       padding-top: 35px;
       padding-bottom: 46px;
       
-      .post-info__index{
+      &__index{
         display: flex;
         margin-bottom: 12px;
         &__name{
@@ -77,7 +77,7 @@ $whitecolor: #ffffff;
           font-size: 12px;
         }
       }
-      .post-info__text{
+      &__text{
         color: #434A54;
         font-size: 14px;
       }
@@ -85,7 +85,7 @@ $whitecolor: #ffffff;
     }
   }
 
-  .chat_main__message-form{
+  &__message-form{
     height: 90px;
     background-color: #d2d2d2;
     display: flex;
