@@ -1,0 +1,43 @@
+.chat_main
+  .chat_main__group-info
+    .group-info
+      %p.group-info__group-name
+        test
+      %p.group-info__members
+        Member:masa
+    =link_to "#", class: "edit-btn" do
+      Edit
+  .chat_main__message-list
+    .post-info
+      .post-info__index
+        %p.post-info__index__name
+          masa
+        %p.post-info__index__time
+          2020/02/08(Sut) 16:33:01
+      .post-info__text
+        %p おはよう！
+    .post-info
+      .post-info__index
+        %p.post-info__index__name
+          masa
+        %p.post-info__index__time
+          2020/02/08(Sut) 16:33:01
+      .post-info__text
+        %p おはよう！
+    .post-info
+      .post-info__index
+        %p.post-info__index__name
+          masa
+        %p.post-info__index__time
+          2020/02/08(Sut) 16:33:01
+      .post-info__text
+        %p おはよう！
+
+  .chat_main__message-form
+    .send-text__form
+      %input{type: "text", class:"send-text__form__input", placeholder: "Type a message"}
+      %label{class: "send-text__form__image"}
+        =icon('fas', 'image')
+        %input{type: "file", class:"send-text__form__image__file"}
+    %input{type:"submit",  class: "submit-btn", value: "Send"}
+      

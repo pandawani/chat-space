@@ -1,0 +1,60 @@
+$whitecolor: #ffffff;
+@mixin w2h($width,$height){
+  width: $width;
+  height: $height;
+}
+.wrapper{
+  display: flex;
+}
+
+.side_bar{
+  @include w2h(300px, 100vh);
+  background-color: #253141;
+  color: $whitecolor;
+  font-weight: bold;
+
+  &__user-name{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    .top-items{
+      @include w2h(260, 20);
+      display: flex;
+      line-height: 20px;
+      &__name{
+        width: 200px;
+        font-size: 16px;
+      }
+      &__icons{
+        width: 60px;
+        text-align: right;
+        &__edit{
+          text-decoration: none;;
+          color: $whitecolor;
+          margin-right: 5px;
+        }
+        &__cog{
+          color: $whitecolor;
+        }
+      }
+    }
+  }
+
+  &__group-list{
+    height: calc(100% - 100px);
+    background-color: #2f3e51;
+    .group-list__items{
+      padding: 20px 20px 40px;
+      &__name{
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+      &__new-message{
+        font-size: 11px;
+      }
+    }
+  }
+}
