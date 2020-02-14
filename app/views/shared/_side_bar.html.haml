@@ -5,28 +5,16 @@
         %p 
           =current_user.name
       .top-items__icons
-        =link_to "#", class:"top-items__icons__edit" do
+        =link_to new_group_path, class:"top-items__icons__edit" do
           %i.fa.fa-edit
         =link_to edit_user_path(current_user), class:"top-items__icons__cog" do
           %i.fa.fa-cog
- 
 
   .side_bar__group-list
-    .group-list__items
-      %p.group-list__items__name
-        techcamp
-      %p.group-list__items__new-message
-        まだメッセージはありません。 
-
-    .group-list__items
-      %p.group-list__items__name
-        techcamp
-      %p.group-list__items__new-message
-        まだメッセージはありません。
-
-    .group-list__items
-      %p.group-list__items__name
-        techcamp
-      %p.group-list__items__new-message
-        まだメッセージはありません。
-   
+    - current_user.groups.each do |group|
+      .group-list__items
+        =link_to '#' do
+          .group-list__items__name
+            =group.name
+          .group-list__items__new-message
+            メッセージはまだありません

@@ -51,8 +51,10 @@ $whitecolor: #ffffff;
       &__name{
         margin-bottom: 5px;
         font-size: 15px;
+        color: $whitecolor;
       }
       &__new-message{
+        color: $whitecolor;
         font-size: 11px;
       }
     }
