@@ -97,27 +97,26 @@ $whitecolor: #ffffff;
       &__input{
         margin-left: 40px;
         padding-left: 5px;
-        @include w2h(964px, 50px);
+        @include w2h(954px, 50px);
       }
-
       &__image{
         position: absolute;
         top: 10px;
         right: 10px;
         font-size: 20px;
-      }
-
-      &__image__file{
-        display: none;
-      }
+        &__file{
+          display: none;
+        }
+      }   
     }
-  }
     .submit-btn{
       @include btn;
       color: $whitecolor;
       background-color: #38aef0;
       line-height: 40px;
       margin-right: 40px;
+      margin-left: 10px;
+    }
   }
 }
 

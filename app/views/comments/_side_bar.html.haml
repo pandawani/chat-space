@@ -13,7 +13,7 @@
   .side_bar__group-list
     - current_user.groups.each do |group|
       .group-list__items
-        =link_to '#' do
+        =link_to '/groups/#{group.id}/comments' do
           .group-list__items__name
             =group.name
           .group-list__items__new-message

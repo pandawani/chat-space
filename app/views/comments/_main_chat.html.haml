@@ -34,10 +34,11 @@
         %p おはよう！
 
   .chat_main__message-form
-    .send-text__form
-      %input{type: "text", class:"send-text__form__input", placeholder: "Type a message"}
-      %label{class: "send-text__form__image"}
-        =icon('fas', 'image')
-        %input{type: "file", class:"send-text__form__image__file"}
-    %input{type:"submit",  class: "submit-btn", value: "Send"}
-      
+    = form_for [@group, @comment], html:{class: 'chat_main__message-form'} do |f|
+      .send-text__form
+        = f.text_field :body, class: 'send-text__form__input', placeholder: 'type a message'
+        = f.label :image, class: 'send-text__form__image' do
+          = icon('fas', 'image')
+          =f.file_field :image, class: 'send-text__form__image__file'
+      =f.submit 'Send', class: 'submit-btn'
+
