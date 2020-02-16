@@ -19,10 +19,13 @@ $whitecolor: #ffffff;
   background-color:$whitecolor;
 
   &__group-info{
+    // position: fixed;
     border-bottom: #eeeeee solid 1px;
     height: 100px;
+    width: calc(100% - 100px);
     display: flex;
     justify-content: space-between;
+    background-color: $whitecolor;
 
     .group-info{
       margin-left: 40px;
@@ -34,6 +37,7 @@ $whitecolor: #ffffff;
         font-size: 20px;
       }
       &__members{
+        width: 900px;
         position: absolute;
         bottom: 0px;
         color: #999999;
@@ -86,6 +90,10 @@ $whitecolor: #ffffff;
   }
 
   &__message-form{
+    position: fixed;
+    bottom: 0px;
+    left: 300px;
+    width: calc(100% - 300px);
     height: 90px;
     background-color: #d2d2d2;
     display: flex;
@@ -97,27 +105,26 @@ $whitecolor: #ffffff;
       &__input{
         margin-left: 40px;
         padding-left: 5px;
-        @include w2h(964px, 50px);
+        @include w2h(954px, 50px);
       }
-
       &__image{
         position: absolute;
         top: 10px;
         right: 10px;
         font-size: 20px;
-      }
-
-      &__image__file{
-        display: none;
-      }
+        &__file{
+          display: none;
+        }
+      }   
     }
-  }
     .submit-btn{
       @include btn;
       color: $whitecolor;
       background-color: #38aef0;
       line-height: 40px;
       margin-right: 40px;
+      margin-left: 10px;
+    }
   }
 }
 

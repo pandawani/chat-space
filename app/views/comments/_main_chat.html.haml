@@ -1,0 +1,22 @@
+.chat_main
+  .chat_main__group-info
+    .group-info
+      %p.group-info__group-name
+        =@group.name
+      .group-info__members
+        ="Member : " + @group.users.pluck(:name).join(", ")
+        
+    =link_to edit_group_path(@group.id), class: "edit-btn" do
+      Edit
+  .chat_main__message-list
+    =render partial: 'comment', collection: @comments
+
+  .chat_main__message-form
+    = form_for [@group, @comment], html:{class: 'chat_main__message-form'} do |f|
+      .send-text__form
+        = f.text_field :body, class: 'send-text__form__input', placeholder: 'type a message'
+        = f.label :image, class: 'send-text__form__image' do
+          = icon('fas', 'image')
+          =f.file_field :image, class: 'send-text__form__image__file'
+      =f.submit 'Send', class: 'submit-btn'
+

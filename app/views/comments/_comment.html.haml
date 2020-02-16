@@ -1,0 +1,11 @@
+.post-info
+  .post-info__index
+    %p.post-info__index__name
+      =comment.user.name
+    %p.post-info__index__time
+      =comment.created_at
+  .post-info__text
+    - if comment.body.present?
+      =comment.body
+    - if comment.image.present?
+      = image_tag comment.image
