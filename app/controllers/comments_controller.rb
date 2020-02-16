@@ -10,7 +10,11 @@ class CommentsController < ApplicationController
     @group = Group.find(params[:group_id])
     @comment = @group.comments.new(comment_params)
     if @comment.save
+      flash[:notice]='メッセージが保存されました。'
       redirect_to group_comments_path(@group)
+    else
+      flash[:alert]='メッセージを入力してください。'
+      render :index
     end
   end
 
