@@ -6,15 +6,18 @@ class CommentsController < ApplicationController
     @comments = @group.comments.includes(:user)
   end
 
-  # def create
-  #   @comment = Coment.create(comment_params)
-  #   redirect_to "/groups/#{comment.group.id}"
-  # end
+  def create
+    @group = Group.find(params[:group_id])
+    @comment = @group.comments.new(comment_params)
+    if @comment.save
+      redirect_to group_comments_path(@group)
+    end
+  end
 
-  # private
-  # def comment_params
-  #   params.require(:comment).permit(:text).merge(user_id: current_user.id, group_id: params[:group_id])
-  # end
+  private
+  def comment_params
+    params.require(:comment).permit(:body, :image).merge(user_id: current_user.id)
+  end
 
 
 end
