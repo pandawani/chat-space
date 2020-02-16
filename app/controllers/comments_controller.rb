@@ -18,6 +18,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.new
+    @comments = @group.comments.includes(:user)
+    # render :index
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:body, :image).merge(user_id: current_user.id)

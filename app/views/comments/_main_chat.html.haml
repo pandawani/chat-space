@@ -8,30 +8,19 @@
     =link_to "#", class: "edit-btn" do
       Edit
   .chat_main__message-list
-    .post-info
-      .post-info__index
-        %p.post-info__index__name
-          masa
-        %p.post-info__index__time
-          2020/02/08(Sut) 16:33:01
-      .post-info__text
-        %p おはよう！
-    .post-info
-      .post-info__index
-        %p.post-info__index__name
-          masa
-        %p.post-info__index__time
-          2020/02/08(Sut) 16:33:01
-      .post-info__text
-        %p おはよう！
-    .post-info
-      .post-info__index
-        %p.post-info__index__name
-          masa
-        %p.post-info__index__time
-          2020/02/08(Sut) 16:33:01
-      .post-info__text
-        %p おはよう！
+    =render partial: 'comment', collection: @comments
+    -# - @comments.each do |comment|
+    -#   .post-info
+    -#     .post-info__index
+    -#       %p.post-info__index__name
+    -#         =comment.user.name
+    -#       %p.post-info__index__time
+    -#         =comment.created_at
+    -#     .post-info__text
+    -#       - if comment.body.present?
+    -#         =comment.body
+    -#       - if comment.image.present?
+    -#         = image_tag comment.image
 
   .chat_main__message-form
     = form_for [@group, @comment], html:{class: 'chat_main__message-form'} do |f|
