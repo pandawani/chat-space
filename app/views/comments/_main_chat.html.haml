@@ -2,25 +2,14 @@
   .chat_main__group-info
     .group-info
       %p.group-info__group-name
-        test
-      %p.group-info__members
-        Member:masa
-    =link_to "#", class: "edit-btn" do
+        =@group.name
+      .group-info__members
+        ="Member : " + @group.users.pluck(:name).join(", ")
+        
+    =link_to edit_group_path(@group.id), class: "edit-btn" do
       Edit
   .chat_main__message-list
     =render partial: 'comment', collection: @comments
-    -# - @comments.each do |comment|
-    -#   .post-info
-    -#     .post-info__index
-    -#       %p.post-info__index__name
-    -#         =comment.user.name
-    -#       %p.post-info__index__time
-    -#         =comment.created_at
-    -#     .post-info__text
-    -#       - if comment.body.present?
-    -#         =comment.body
-    -#       - if comment.image.present?
-    -#         = image_tag comment.image
 
   .chat_main__message-form
     = form_for [@group, @comment], html:{class: 'chat_main__message-form'} do |f|
