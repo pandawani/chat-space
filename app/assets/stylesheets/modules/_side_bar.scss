@@ -8,7 +8,7 @@ $whitecolor: #ffffff;
 }
 
 .side_bar{
-  @include w2h(300px, 100vh);
+  @include w2h(300px, 100%);
   background-color: #253141;
   color: $whitecolor;
   font-weight: bold;
@@ -47,6 +47,7 @@ $whitecolor: #ffffff;
   }
 
   &__group-list{
+
     margin-top: 100px;
     height: calc(100% - 100px);
     background-color: #2f3e51;

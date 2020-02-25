@@ -45,9 +45,10 @@ $whitecolor: #ffffff;
 
       }
     }
-
     .edit-btn{
       @include btn;
+      display: block;
+      z-index: 1;
       color: #38aef0;
       border: #38aef0 solid 1px;
       text-decoration: none;
@@ -64,6 +65,7 @@ $whitecolor: #ffffff;
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     .post-info{
+      background-color: #fafafa;
       padding-left: 40px;
       padding-top: 35px;
       padding-bottom: 46px;
@@ -90,10 +92,10 @@ $whitecolor: #ffffff;
   }
 
   &__message-form{
-    position: fixed;
+    // position: fixed;
     bottom: 0px;
     left: 300px;
-    width: calc(100% - 300px);
+    // width: calc(100% - 300px);
     height: 90px;
     background-color: #d2d2d2;
     display: flex;
