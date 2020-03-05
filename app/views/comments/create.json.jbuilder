@@ -1,4 +1,3 @@
-# -binding.pry
 json.body @comment.body
 json.image @comment.image_url
 json.user_name @comment.user.name
