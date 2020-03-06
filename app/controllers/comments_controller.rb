@@ -9,15 +9,15 @@ class CommentsController < ApplicationController
   def create
     @group = Group.find(params[:group_id])
     @comment = @group.comments.new(comment_params)
-
-    respond_to do |format|
-      if @comment.save
-        format.json
-      else
+    if @comment.save
+      respond_to do |format|
         format.json
       end
+    else
+      @comments = @group.comments.includes(:user)
+      flash.now[:alert] = 'メッセージを入力してください'
+      render :index
     end
-
   end
 
   def show
