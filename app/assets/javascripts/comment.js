@@ -31,7 +31,6 @@ $(function(){
     };
   }
   $('#new_comment').on('submit',function(e){
-    console.log("aaa")
     e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
