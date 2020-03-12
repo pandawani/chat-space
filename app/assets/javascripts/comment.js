@@ -77,6 +77,6 @@ $(function(){
     })
   }
   if (document.location.href.match(/\/groups\/\d+\/comments/)) {
-    setInterval(reloadComments, 7000);
+    setInterval(reloadComments, 5000);
   }
 });
